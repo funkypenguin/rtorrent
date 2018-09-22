@@ -1,5 +1,10 @@
 FROM phusion/baseimage:0.9.16
 
+# BUILD_DATE and VCS_REF are immaterial, since this is a 2-stage build, but our build
+# hook won't work unless we specify the args
+ARG BUILD_DATE
+ARG VCS_REF
+
 ENV RUTORRENT_URI=https://bintray.com/artifact/download/novik65/generic/rutorrent-3.6.tar.gz\
     RUTORRENT_SHA1=5870cddef717c83560e89aee56f2b7635ed1c90d\
     RUTORRENT_PLUGINS_URI=https://bintray.com/artifact/download/novik65/generic/plugins-3.6.tar.gz\
