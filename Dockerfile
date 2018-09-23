@@ -5,6 +5,12 @@ FROM phusion/baseimage:0.9.16
 ARG BUILD_DATE
 ARG VCS_REF
 
+# Good docker practice, plus we get microbadger badges
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/funkypenguin/rtorrent.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.schema-version="2.2-r1"
+
 ENV RUTORRENT_URI=https://bintray.com/artifact/download/novik65/generic/rutorrent-3.6.tar.gz\
     RUTORRENT_SHA1=5870cddef717c83560e89aee56f2b7635ed1c90d\
     RUTORRENT_PLUGINS_URI=https://bintray.com/artifact/download/novik65/generic/plugins-3.6.tar.gz\
